@@ -4,7 +4,6 @@ class WidgetInline extends React.Component {
 
     componentDidMount() {
         this.uploadWidget()
-        // document.getElementById("myWidgetContainer").innerHTML = "test string";   
     }
 
     uploadWidget = () => {
@@ -16,14 +15,18 @@ class WidgetInline extends React.Component {
                 maxImageHeight: 1200,
                 maxFiles: 12,
                 sources: ['local', 'camera', 'facebook', 'instagram', 'dropbox'],
-                inlineContainer: document.getElementById('myWidgetContainer'),
+                ///this will run the widget before the render() and create an arror
+                // inlineContainer: document.getElementById('myWidgetContainer'),
+
+                // this way works 👇
+                inlineContainer: '#myWidgetContainer'
                 
             },
             (error, result) => {
                 console.log(result);
 
                 if (result && result.event === "success") {
-                    console.log('image uplaod success 👏 - ');
+                    console.log('image uplaod success 👏');
                 }
 
                 if (error) {
