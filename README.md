@@ -28,7 +28,6 @@ FIXME: simply put the div #id in a string and you shouldn't have any problems
 ```
 
 I get the function to launch the widget
-
 ```jsx
 componentDidMount() {
         this.uploadWidget() 
